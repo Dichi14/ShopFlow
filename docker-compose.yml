@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: shopflow-postgres
+    environment:
+      POSTGRES_USER: shopflow
+      POSTGRES_PASSWORD: shopflow
+      POSTGRES_DB: shopflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
